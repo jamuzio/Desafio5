@@ -1,0 +1,24 @@
+html
+  head
+    link(href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous")
+    title= "Productos (PUG)"
+  body
+    div(class="container mt-3")
+      h1(style= "color: rgb(189, 105, 9) ") Productos Disponibles
+      if hayProductos
+        table(class="table table-dark table-striped")
+          thead(class="thead-dark")
+            tr
+              th Producto
+              th Precio
+              th Imagen
+          tbody
+            each Producto in AllProd
+              tr
+                td=Producto.TITLE
+                td=Producto.PRICE
+                td 
+                  img(src= Producto.THUMBNAIL  alt="" border=3 height=40 width=40)
+      else
+        p(class="alert alert-warning")= "No hay productos cargados..."
+      input(type="button" class="btn btn-primary" onclick="location.href='/';" value="Cargar Nuevo Producto")

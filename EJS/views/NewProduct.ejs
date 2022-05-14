@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <title>Productos (EJS)</title>
+</head>
+
+<body>
+    <div class="container mt-3">
+        <h1 style= "color: rgb(136, 134, 9) " >Ingrese un producto</h1>
+        <div class="p-4 mt-1 mb-3 bg-dark rounded-3">
+            <form action= "/api/productos" method="post">
+                <div class="form-group">
+                <label for="TITLE">Producto</label>
+                <input type="text" id="TITLE" class="form-control" name="TITLE" placeholder="Nombre del Producto" pattern=[A-Z a-z 0-9]{3,20} required>
+                </div>
+                <div class="form-group">
+                    <label for="PRICE">Precio</label>
+                    <input type="number" id="PRICE" class="form-control" name="PRICE" placeholder="Precio del Producto"  required>
+                </div>
+                <div class="form-group">
+                <label for="THUMBNAIL">Imagen</label>
+                <input type="url" id="THUMBNAIL" class="form-control" name="THUMBNAIL" placeholder="URL a imagen descriptiva"  required>
+                </div>
+                <button class = "btn btn-info mt-3 mb-5"type="submit">Enviar</button>
+            </form>
+        </div>
+        <input type="button" class="btn btn-primary" onclick="location.href='/productos';" value="Ver Productos Cargados " />
+    </div>
+</body>
+
+</html>
+

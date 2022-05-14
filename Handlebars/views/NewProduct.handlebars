@@ -1,0 +1,19 @@
+<h1 style= "color: rgb(142, 15, 247) " >Ingrese un producto</h1>
+<div class="p-4 mt-1 mb-3 bg-dark rounded-3">
+    <form action= "/api/productos" method="post">
+        <div class="form-group">
+        <label for="TITLE">Producto</label>
+        <input type="text" id="TITLE" class="form-control" name="TITLE" placeholder="Nombre del Producto" pattern=[A-Z a-z 0-9]{3,20} required>
+        </div>
+        <div class="form-group">
+            <label for="PRICE">Precio</label>
+            <input type="number" id="PRICE" class="form-control" name="PRICE" placeholder="Precio del Producto"  required>
+        </div>
+        <div class="form-group">
+        <label for="THUMBNAIL">Imagen</label>
+        <input type="url" id="THUMBNAIL" class="form-control" name="THUMBNAIL" placeholder="URL a imagen descriptiva"  required>
+        </div>
+        <button class = "btn btn-info mt-3 mb-5"type="submit">Enviar</button>
+    </form>
+</div>
+<input type="button" class="btn btn-primary" onclick="location.href='/productos';" value="Ver Productos Cargados " />
